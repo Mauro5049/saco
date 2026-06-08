@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pizza</title>
+</head>
+<script>
+    let pizza_counter = 0;
+
+    function click_pizza() {
+        if (pizza_counter >= 5) {
+            pizza = document.getElementById("pizza")
+            pizza.src = "https://thumbs.dreamstime.com/b/fogo-do-inferno-da-bola-de-fogo-da-explos%C3%A3o-41507521.jpg"
+        }
+        else {
+            pizza_counter += 1;
+        }
+    }
+</script>
+<body>
+    <h1>Pizzaria do Pelli</h1>
+    <img onclick="click_pizza()" src="https://superpizzapan.com.br/wp-content/uploads/2024/04/pepperoni.png" id="pizza" width="949px" height="511">
+</body>
+</html>

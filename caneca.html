@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>caneca</title>
+</head>
+<style>
+    img {
+        transition: transform 0.5s ease;
+    }
+</style>
+<script>
+    rotation = 0
+    running = false
+    function backflip() {
+        if (!running) return;
+        gromit = document.getElementById("mug")
+        rotation += 90
+        gromit.style.transform = `rotate(${rotation}deg)`
+        requestAnimationFrame(backflip);
+    }
+</script>
+<body>
+    <h1>mug</h1>
+    <img onclick="running = !running; backflip()" src="https://m.media-amazon.com/images/I/61Rjq4RxetL._AC_SL1500_.jpg" id="mug" width="949px" height="511">
+</body>
+</html>

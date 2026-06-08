@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>os strokes</title>
+</head>
+<body>
+    <style>
+        body {
+            background-image: image-set("https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/GRACE-FO_Launch_%28NHQ201805220019%29.jpg/1280px-GRACE-FO_Launch_%28NHQ201805220019%29.jpg");
+            background-repeat: no-repeat;
+            background-size: 1920px 1200px; 
+            color: lightgreen;
+        }    
+    </style>
+    <h1>os strokes</h1>
+    <button onclick="play_pause()" id="but">tocar musica</button>
+    <audio id="aud"></audio>
+    <br>
+    <img src="https://web.archive.org/web/20090902013650/http://geocities.com/msvallahns/monitor_t.gif">
+    <img src="https://web.archive.org/web/20090902013650/http://geocities.com/msvallahns/monitor_t.gif">
+    <img src="https://web.archive.org/web/20090902013650/http://geocities.com/msvallahns/monitor_t.gif">
+    <img src="https://web.archive.org/web/20090902013650/http://geocities.com/msvallahns/monitor_t.gif">
+    <img src="https://web.archive.org/web/20090902013650/http://geocities.com/msvallahns/monitor_t.gif">
+    <img src="https://web.archive.org/web/20090902013650/http://geocities.com/msvallahns/monitor_t.gif">
+    <img src="https://web.archive.org/web/20090902013650/http://geocities.com/msvallahns/monitor_t.gif">
+    <img src="https://web.archive.org/web/20090902013650/http://geocities.com/msvallahns/monitor_t.gif">
+    <img src="https://web.archive.org/web/20090902013650/http://geocities.com/msvallahns/monitor_t.gif">
+    <img src="https://web.archive.org/web/20090902013650/http://geocities.com/msvallahns/monitor_t.gif">
+    <img src="https://web.archive.org/web/20090902013650/http://geocities.com/msvallahns/monitor_t.gif">
+    <img src="https://web.archive.org/web/20090902013650/http://geocities.com/msvallahns/monitor_t.gif">
+    <img src="https://web.archive.org/web/20090902013650/http://geocities.com/msvallahns/monitor_t.gif">
+    <br>
+    <img src="https://i.scdn.co/image/ab67616100005174c3b137793230f4043feb0089" width="1000px" height="500px">
+    <br>
+    <img src="https://web.archive.org/web/20090729065155/http://de.geocities.com/martinrix2000/flynghorse.gif">
+    <img src="https://web.archive.org/web/20091025162704/http://geocities.com/curt_sigurdsen/firebar.gif" width="730px">
+    <img src="https://web.archive.org/web/20090729065155/http://de.geocities.com/martinrix2000/flynghorse.gif">
+    <br>
+    <img src="https://web.archive.org/web/20090727232251/http://www.geocities.com/gold_coast_shafii/ROTATEALLAH.gif">
+    <img src="https://web.archive.org/web/20091027081119/http://geocities.com/~abdulwahid//allah_anim.gif">
+    <img src="https://web.archive.org/web/20091027021119/http://geocities.com/lovefouzer/allah.gif">
+    <img src="https://web.archive.org/web/20090831182359/http://geocities.com/sautuldai/allah.gif">
+    <img src="https://web.archive.org/web/20091021215348/http://www.geocities.com/mmasumeen/allahoma.gif">
+    <img src="https://web.archive.org/web/20090829050327/http://geocities.com/qaisar8/allah/names/jubile.gif">
+    <br>
+    <br>
+    <br>
+    <img src="https://web.archive.org/web/20091027004530/http://geocities.com/clubfoundersclub/graphics/netscape.gif">
+    <img src="https://web.archive.org/web/20091027084756/http://www.geocities.com/SiliconValley/Cable/1415/graphics/iexplorer.gif">
+    <script>
+    const aud = document.getElementById("aud")
+    const but = document.getElementById("but")
+
+    async function retrieve_song(audio) {
+        const response = await fetch("https://raw.githubusercontent.com/Mauro5049/saco/main/virginia.mp3");
+        if (!response.ok) {
+            throw new Error(`${response.status}`);
+        }
+        const blob = await response.blob();
+        const objectUrl = URL.createObjectURL(blob);
+
+        aud.src = objectUrl;
+        aud.load();
+    }
+
+    function play_pause() {
+        if (aud.paused) {
+            but.textContent = "pausar musica"
+            aud.play()
+        }
+        else {
+            but.textContent = "tocar musica"
+            aud.pause()
+        }
+    }
+
+    retrieve_song(aud)
+    </script>
+</body>
+</html>
